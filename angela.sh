@@ -16,5 +16,29 @@ then
 	exit 1
 fi
 
+# Display the username.
+USER_NAME=$(id -un)
 
+# Test f the command succeeded.
+# ${?} is a special variable in bash that holds the exit status
+# of the most recent executed script.
+if [[ "${?}" -ne 0 ]]
+then
+	echo "The ID command did not execute succesfully."
+	exit 1
+fi
 
+echo "Your username is ${USER_NAME}"
+
+# You can use a string test conditional.
+USER_NAME_TO_TEST='vagrant'
+if [[ "${USER_NAME}" = "${USER_NAME_TO_TEST}" ]]
+then
+	echo "Your username (${USER_NAME}) is equal to ${USER_NAME_TO_TEST}"
+	exit 0
+else
+	echo "Your username is not the same as ${USER_NAME_TO_TEST}"
+	echo 1
+fi
+
+exit 0
