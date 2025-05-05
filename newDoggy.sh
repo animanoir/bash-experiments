@@ -15,7 +15,7 @@ echo "And I am you."
 # Ask for the real name.
 echo "But I will name you ${USERNAME} conventionally for now..."
 # Ask for the password.
-read -p "Write your favorite word: "
+read -p "Write your favorite word: " PASSWORD
 echo "Your favorite word is now my secret."
 # Create the user.
 echo "Now I will create your soul..."
